@@ -11,7 +11,7 @@ import numpy as np
 from getData import *
 from encryptPass import *
 from createClub import *
-
+import hashlib
 # get .env file
 ENV_FILE = find_dotenv()
 if ENV_FILE:
@@ -144,9 +144,11 @@ def home():
     if session:
         #print(session.get('user')['userinfo']['name'])
         t = user_balance.query.filter_by(user_name=session.get('user')['userinfo']['name']).first()
+        temp_u = transaction_details.query.filter_by(sender=(session.get('user')['userinfo']['name'])).all()
+        print(temp_u)
         return render_template("home.html", session=session.get('user'), name=session.get('user')['userinfo']['name'],
             e=session.get('user')['userinfo']['email'],
-            b=np.round(t.balance, 3), indent=4)
+            b=np.round(t.balance, 3), indent=4, all_us=temp_u)
     else:
         return render_template("home.html", session=session.get('user'), indent=4)
 
@@ -182,32 +184,38 @@ def payments():
             # merge records and delete records
             start_time = datetime.utcnow()
             #print(start_time)
-            update_user = user_balance.query.filter_by(user_name = receiver).first()
-            temp_bal = update_user.balance
-            update_user_1 = user_balance.query.filter_by(user_name = receiver).first()
-            update_user_1 = user_balance.query.filter_by(user_name = sender).first()
-            temp_bal_1 = update_user_1.balance
-            update_user.balance = temp_bal + amt
-            #print(temp_bal)
-            if temp_bal_1 < amt:
-                return 'Insufficient balance.'
-            if sender == receiver:
-                return 'Invalid Transaction'
-            update_sender = user_balance.query.filter_by(user_name = sender).first()
-            temp_bal_1 = update_sender.balance
-            update_sender.balance = temp_bal_1 - amt
-
-            # update_user_1 = user_balance.query.filter_by(user_name = receiver).first()
-            # temp_bal_1 = update_user_1.balance
-            # update_user_1.balance = temp_bal_1 + amt
-            # print(temp_bal_1)
-            end_time = datetime.utcnow()
+            try:
+                update_user = user_balance.query.filter_by(user_name = receiver).first()
+                temp_bal = update_user.balance
+                update_user_1 = user_balance.query.filter_by(user_name = receiver).first()
+                update_user_1 = user_balance.query.filter_by(user_name = sender).first()
+                temp_bal_1 = update_user_1.balance
+                update_user.balance = temp_bal + amt
             
-            # create a new valid transaction
-            new_transaction = transaction_details(sender=getEncryptedUname(sender), receiver=getEncryptedUname(receiver), amount=amt, status=1)
-            new_bal = user_balance(user_name=receiver, balance=amt)
-            db.session.add(new_transaction)
-            db.session.commit()
+                #print(temp_bal)
+                if temp_bal_1 < amt:
+                    return 'Insufficient balance.'
+                if sender == receiver:
+                    return 'Invalid Transaction'
+                update_sender = user_balance.query.filter_by(user_name = sender).first()
+                temp_bal_1 = update_sender.balance
+                update_sender.balance = temp_bal_1 - amt
+
+                # update_user_1 = user_balance.query.filter_by(user_name = receiver).first()
+                # temp_bal_1 = update_user_1.balance
+                # update_user_1.balance = temp_bal_1 + amt
+                # print(temp_bal_1)
+                end_time = datetime.utcnow()
+                
+                # create a new valid transaction
+                new_transaction = transaction_details(sender=getEncryptedUname(sender), receiver=getEncryptedUname(receiver), amount=amt, status=1)
+                new_bal = user_balance(user_name=receiver, balance=amt)
+                db.session.add(new_transaction)
+                db.session.commit()
+
+                
+            except:
+                print('Cannot complete transaction')
             return ('', 204)
     else:
         sender = session.get('user')['userinfo']['name']
@@ -225,6 +233,10 @@ def receive():
 @app.route('/viewevent')
 def viewevent():
     return render_template('viewevents.html')
+
+@app.route('/news')
+def news():
+    return render_template('news.html')
 
 # create new events
 @app.route('/createvent', methods=['GET', 'POST'])

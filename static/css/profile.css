@@ -417,8 +417,11 @@ td {
 }
 
 .card{
+  display: flex;
+  flex-wrap: wrap;
   border-radius: 15px;
   min-width: 279px;
+  flex-direction: row;
 }
 
 .plots{

@@ -11,11 +11,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/receive.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="icon" href="../static/images/Camplus-logo.png">
     <link rel="stylesheet" href="../static/css/profile.css">
 </head>
 <body>
 
-    <div class="sidebar">
+  <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
         <div class="logo_name">Cam+</div>
@@ -26,6 +29,13 @@
           <!-- <i class='bx bx-search' ></i> -->
          <!-- <input type="text" placeholder="Search...">
          <span class="tooltip">Search</span> -->
+      </li>
+      <li>
+        <a href="{{url_for('clubadmin')}}">
+          <i class="bi bi-people-fill"></i>
+          <span class="links_name">Club Admin</span>
+        </a>
+         <span class="tooltip">Club Admin</span>
       </li>
       <li>
         <a href="{{url_for('createvent')}}">
@@ -42,6 +52,14 @@
        <span class="tooltip">Home</span>
      </li>
      <li>
+      <a href="{{url_for('rewards')}}">
+        <i class='bx bx-cart-alt' ></i>
+        <span class="links_name">Rewards</span>
+      </a>
+      <span class="tooltip">Rewards</span>
+    </li>
+     <li>
+      
        <a href="{{url_for('viewevent')}}">
          <i class='bx bx-chat' ></i>
          <span class="links_name">View Events</span>
@@ -56,19 +74,12 @@
        <span class="tooltip">Payments</span>
      </li>
      <li>
-      <a href="{{url_for('clubadmin')}}">
-        <i class='bx bx-grid-alt'></i>
-        <span class="links_name">Club Admin</span>
-      </a>
-       <span class="tooltip">Club Admin</span>
-    </li>
-     <li>
-      <a href="{{url_for('rewards')}}">
-        <i class='bx bx-cart-alt' ></i>
-        <span class="links_name">Rewards</span>
-      </a>
-      <span class="tooltip">Rewards</span>
-    </li>
+       <a href="{{url_for('news')}}">
+         <i class="fi fi-rr-edit"></i>
+         <span class="links_name">News</span>
+       </a>
+       <span class="tooltip">News</span>
+     </li>
      <li>
        <a href="{{url_for('feedback')}}">
          <i class='bx bx-folder' ></i>

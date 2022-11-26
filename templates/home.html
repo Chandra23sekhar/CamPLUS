@@ -8,12 +8,16 @@
   <link rel="icon" href="../static/images/Cam[PLUS].png">
   <!-- <link rel="stylesheet" href="../static/css/profile.css"> -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel="icon" href="../static/images/Camplus-logo.png">
   <!-- <title>Auth0 Example</title> -->
   <!-- <link rel="stylesheet" href="../static/css/login.css"> -->
   <link rel="stylesheet" href="../static/css/profile.css">
   <link rel="icon" href="../static//images/Camplus-logo.png">
   <!-- <link rel="stylesheet" href="../static/css/index.css"> -->
   <script src="../static/js/main.js"></script>
+  <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
   
 </head>
 <body>
@@ -37,7 +41,7 @@
           </li>
           <li>
             <a href="{{url_for('clubadmin')}}">
-              <i class='bx bx-grid-alt'></i>
+              <i class="bi bi-people-fill"></i>
               <span class="links_name">Club Admin</span>
             </a>
              <span class="tooltip">Club Admin</span>
@@ -57,29 +61,37 @@
            <span class="tooltip">Home</span>
          </li>
          <li>
-            <a href="{{url_for('rewards')}}">
-              <i class='bx bx-cart-alt' ></i>
-              <span class="links_name">Rewards</span>
-            </a>
-            <span class="tooltip">Rewards</span>
-          </li>
+          <a href="{{url_for('rewards')}}">
+            <i class='bx bx-cart-alt' ></i>
+            <span class="links_name">Rewards</span>
+          </a>
+          <span class="tooltip">Rewards</span>
+        </li>
          <li>
-           <a href="viewevent">
-             <i class='bx bx-chat'></i>
+          
+           <a href="{{url_for('viewevent')}}">
+             <i class='bx bx-chat' ></i>
              <span class="links_name">View Events</span>
            </a>
-           <span class="tooltip">Veiw Events</span>
+           <span class="tooltip">View Events</span>
          </li>
          <li>
-           <a href="payments">
+           <a href="{{url_for('payments')}}">
              <i class='bx bx-pie-chart-alt-2' ></i>
-             <span class="links_name">Payment</span>
+             <span class="links_name">Payments</span>
            </a>
-           <span class="tooltip">Payment</span>
+           <span class="tooltip">Payments</span>
          </li>
          <li>
-           <a href="feedback">
-             <i class='bx bx-folder'></i>
+           <a href="{{url_for('news')}}">
+             <i class="fi fi-rr-edit"></i>
+             <span class="links_name">News</span>
+           </a>
+           <span class="tooltip">News</span>
+         </li>
+         <li>
+           <a href="{{url_for('feedback')}}">
+             <i class='bx bx-folder' ></i>
              <span class="links_name">Feedback</span>
            </a>
            <span class="tooltip">Feedback</span>
@@ -90,15 +102,15 @@
              <span class="links_name">Order</span>
            </a>
            <span class="tooltip">Order</span>
-         </li> -->
-         <!-- <li>
+         </li>
+         <li>
            <a href="#">
              <i class='bx bx-heart' ></i>
              <span class="links_name">Saved</span>
            </a>
            <span class="tooltip">Saved</span>
-         </li> -->
-         <!-- <li>
+         </li>
+         <li>
            <a href="#">
              <i class='bx bx-cog' ></i>
              <span class="links_name">Setting</span>
@@ -122,7 +134,7 @@
     <div class="container">
         <div class="header">
             <div class="nav">
-                <img src="../static/images/Camplus-logo.png" alt="" style="width: 70px; height:70px">
+                <img src="../static/images/Camplus-logo.png" alt="" style="width:66px; height:66px">
                 <div class="search">
                     <!-- <input type="text" placeholder="Search..">
                     <button type="submit"><img src="search.png" alt=""></button> -->
@@ -146,7 +158,12 @@
                         <h5 style="color: white;">{{e}}</h5>
                     </div>
                     <div class="icon-case">
-                        <img src="../static/images/students.png" alt="">
+                      <lord-icon
+                        src="https://cdn.lordicon.com/ajkxzzfb.json"
+                        trigger="hover"
+                        style="width:100px;height:100px">
+                      </lord-icon>
+                      
                     </div>
                 </div>
                 <div class="card">
@@ -155,7 +172,11 @@
                         <h3>Balance</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../static/images/teachers.png" alt="">
+                      <lord-icon
+                      src="https://cdn.lordicon.com/qnlcdeqi.json"
+                      trigger="hover"
+                      style="width:120px;height: 120px;">
+                  </lord-icon>
                     </div>
                 </div>
                 <div class="card">
@@ -164,7 +185,12 @@
                         <h3>Received</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../static/images/schools.png" alt="">
+                      <lord-icon
+                      src="https://cdn.lordicon.com/jkzrgmvk.json"
+                      trigger="hover"
+                      colors="primary:#2516c7,secondary:#2516c7,tertiary:#ffffff,quaternary:#fffdfd"
+                      style="width:120px;height:120px">
+                  </lord-icon>
                     </div>
                 </div>
                 <div class="card">
@@ -173,30 +199,39 @@
                         <h3>Total Points Used</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../static/images/income.png" alt="">
+                      <lord-icon
+                      src="https://cdn.lordicon.com/swvqwdea.json"
+                      trigger="hover"
+                      colors="outline:#181730,primary:#b26836,secondary:#ffc738"
+                      style="width:120px;height:120px">
+                  </lord-icon>
                     </div>
                 </div>
             </div>
             <div class="content-2">
                 <div class="recent-payments">
                     <div class="title">
-                        <h>Recent Payments</h>
+                        <h>Recent Payments Made</h>
                         <a href="#" class="btn">View All</a>
                     </div>
                     <table>
+                      <tr>
+                          <th>Name</th>
+                          <th>Institute</th>
+                          <th>Amount</th>
+                          <!-- <th>Option</th> -->
+                      </tr>
+                    {% for a in all_us %}
+                    <!-- <p>{{a.sender}}, {{a.receiver}}, {{a.amount}}</p> -->
+                    
+                    
                         <tr>
-                            <th>Name</th>
-                            <th>Institute</th>
-                            <th>Amount</th>
-                            <th>Option</th>
+                            <td>{{a.sender}}</td>
+                            <td>{{a.receiver}}</td>
+                            <td>{{a.amount}}</td>
+                            <!-- <td><a href="#" class="btn">View</a></td> -->
                         </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>Nmit</td>
-                            <td>$2</td>
-                            <td><a href="#" class="btn">View</a></td>
-                        </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>John Doe</td>
                             <td>Nmit</td>
                             <td>$1</td>
@@ -225,7 +260,8 @@
                             <td>Reva</td>
                             <td>$2</td>
                             <td><a href="#" class="btn">View</a></td>
-                        </tr>
+                        </tr> -->
+                        {% endfor %}
                     </table>
                 </div>
 

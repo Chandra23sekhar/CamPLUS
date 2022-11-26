@@ -150,13 +150,14 @@ body{
     margin-top: 30px;
 }
 
-@media (max-width: 870px){
-    .body{
-        padding-left: 20px;
-        padding-right: 20px;
+@media only screen and (max-width: 680px) {
+    body{
+        padding-left: 150px;
+        /* padding-right: 50px; */
     }
-    .container{
-        width: 350px;
+    .container-11{
+        margin-left: 30px;
+        width: 270px;
     }
 
     #submit-btn{

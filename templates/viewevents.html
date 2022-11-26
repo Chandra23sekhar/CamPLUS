@@ -7,101 +7,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" href="../static/css/viewevent.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="icon" href="../static/images/Camplus-logo.png">
     <link rel="stylesheet" href="../static/css/profile.css">
     <link rel="icon" href="../static/images/Camplus-logo.png">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <title>Events Card</title>
 </head>
 <body>
 
-    <div class="sidebar">
-        <div class="logo-details">
-          <i class='bx bxl-c-plus-plus icon'></i>
-            <div class="logo_name">Cam+</div>
-            <i class='bx bx-menu' id="btn" ></i>
-        </div>
-        <ul class="nav-list">
-          <li>
-              <!-- <i class='bx bx-search' ></i> -->
-             <!-- <input type="text" placeholder="Search...">
-             <span class="tooltip">Search</span> -->
-          </li>
-          <li>
-            <a href="{{url_for('createvent')}}">
-              <i class='bx bx-grid-alt'></i>
-              <span class="links_name">Create Event</span>
-            </a>
-             <span class="tooltip">Create Event</span>
-          </li>
-          <li>
-           <a href="{{url_for('home')}}">
-             <i class='bx bx-user' ></i>
-             <span class="links_name">Home</span>
-           </a>
-           <span class="tooltip">Home</span>
-         </li>
-         <li>
-          <a href="{{url_for('clubadmin')}}">
-            <i class='bx bx-grid-alt'></i>
-            <span class="links_name">Club Admin</span>
-          </a>
-           <span class="tooltip">Club Admin</span>
-        </li>
-         <li>
-           <a href="{{url_for('viewevent')}}">
-             <i class='bx bx-chat' ></i>
-             <span class="links_name">View Events</span>
-           </a>
-           <span class="tooltip">View Events</span>
-         </li>
-         <li>
-            <a href="{{url_for('rewards')}}">
-              <i class='bx bx-cart-alt' ></i>
-              <span class="links_name">Rewards</span>
-            </a>
-            <span class="tooltip">Rewards</span>
-          </li>
-         <li>
-           <a href="{{url_for('payments')}}">
-             <i class='bx bx-pie-chart-alt-2' ></i>
-             <span class="links_name">Payments</span>
-           </a>
-           <span class="tooltip">Payments</span>
-         </li>
-         <li>
-           <a href="{{url_for('feedback')}}">
-             <i class='bx bx-folder' ></i>
-             <span class="links_name">Feedback</span>
-           </a>
-           <span class="tooltip">Feedback</span>
-         </li>
-         <!-- <li>
-           <a href="#">
-             <i class='bx bx-cart-alt' ></i>
-             <span class="links_name">Order</span>
-           </a>
-           <span class="tooltip">Order</span>
-         </li>
-         <li>
-           <a href="#">
-             <i class='bx bx-heart' ></i>
-             <span class="links_name">Saved</span>
-           </a>
-           <span class="tooltip">Saved</span>
-         </li>-->
-         <li>
-           <a href="{{url_for('logout')}}">
-             <i class='bx bx-log-out' id='log_out'></i>
-             <span class="links_name">Log Out</span>
-           </a>
-           <span class="tooltip">Log Out</span>
-         </li>
-         <!-- <li class="profile">
-             
-             <i class='bx bx-log-out' id="log_out" ></i>
-         </li> -->
-        </ul>
-      </div>
-
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">Cam+</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <!-- <i class='bx bx-search' ></i> -->
+         <!-- <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span> -->
+      </li>
+      <li>
+        <a href="{{url_for('clubadmin')}}">
+          <i class="bi bi-people-fill"></i>
+          <span class="links_name">Club Admin</span>
+        </a>
+         <span class="tooltip">Club Admin</span>
+      </li>
+      <li>
+        <a href="{{url_for('createvent')}}">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Create Event</span>
+        </a>
+         <span class="tooltip">Create Event</span>
+      </li>
+      <li>
+       <a href="{{url_for('home')}}">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Home</span>
+       </a>
+       <span class="tooltip">Home</span>
+     </li>
+     <li>
+      <a href="{{url_for('rewards')}}">
+        <i class='bx bx-cart-alt' ></i>
+        <span class="links_name">Rewards</span>
+      </a>
+      <span class="tooltip">Rewards</span>
+    </li>
+     <li>
+      
+       <a href="{{url_for('viewevent')}}">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">View Events</span>
+       </a>
+       <span class="tooltip">View Events</span>
+     </li>
+     <li>
+       <a href="{{url_for('payments')}}">
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Payments</span>
+       </a>
+       <span class="tooltip">Payments</span>
+     </li>
+     <li>
+       <a href="{{url_for('news')}}">
+         <i class="fi fi-rr-edit"></i>
+         <span class="links_name">News</span>
+       </a>
+       <span class="tooltip">News</span>
+     </li>
+     <li>
+       <a href="{{url_for('feedback')}}">
+         <i class='bx bx-folder' ></i>
+         <span class="links_name">Feedback</span>
+       </a>
+       <span class="tooltip">Feedback</span>
+     </li>
+     <!-- <li>
+       <a href="#">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Order</span>
+       </a>
+       <span class="tooltip">Order</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Saved</span>
+       </a>
+       <span class="tooltip">Saved</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li> -->
+     <li>
+      <a href="{{url_for('logout')}}">
+        <i class='bx bx-log-out' id='log_out'></i>
+        <span class="links_name">Log Out</span>
+      </a>
+      <span class="tooltip">Log Out</span>
+    </li>
+    </ul>
+  </div>
 
 
     <div class="container-11">

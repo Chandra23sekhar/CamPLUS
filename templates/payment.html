@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cam[PLUS] | Payment</title>
-    <link rel="icon" href="../static/images/Cam[PLUS].png">
+    <link rel="icon" href="../static/images/Camplus-logo.png">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../static/css/payment.css">
     <link rel="stylesheet" href="../static/css/profile.css">
     <script src="../static/js/script1.js"></script>
     <link rel="stylesheet" href="../static/css/paymentSucc.css">
     <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
-    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
     <script src="https://kit.fontawesome.com/16e4e7adbf.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
   
@@ -31,7 +32,7 @@
       </li>
       <li>
         <a href="{{url_for('clubadmin')}}">
-          <i class='bx bx-grid-alt'></i>
+          <i class="bi bi-people-fill"></i>
           <span class="links_name">Club Admin</span>
         </a>
          <span class="tooltip">Club Admin</span>
@@ -71,6 +72,13 @@
          <span class="links_name">Payments</span>
        </a>
        <span class="tooltip">Payments</span>
+     </li>
+     <li>
+       <a href="{{url_for('news')}}">
+         <i class="fi fi-rr-edit"></i>
+         <span class="links_name">News</span>
+       </a>
+       <span class="tooltip">News</span>
      </li>
      <li>
        <a href="{{url_for('feedback')}}">
@@ -113,7 +121,6 @@
     </li>
     </ul>
   </div>
-
   <img src="../static/images/PngItem_5108509.png" alt="" id="coin-img">
     <div class="container-11">
         <h3>Payment Details</h3>
