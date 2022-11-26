@@ -70,3 +70,14 @@ label{
 #sname{
     display: inline;
 }
+
+@media screen and (max-width:680px)  {
+    body{
+        padding-left: 150px;
+    }
+
+    .container-11{
+        left: 60%;
+    }
+    
+}

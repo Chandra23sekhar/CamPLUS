@@ -11,6 +11,8 @@
   <!-- <title>Auth0 Example</title> -->
   <!-- <link rel="stylesheet" href="../static/css/login.css"> -->
   <link rel="stylesheet" href="../static/css/profile.css">
+  <link rel="icon" href="../static//images/Camplus-logo.png">
+  <!-- <link rel="stylesheet" href="../static/css/index.css"> -->
   <script src="../static/js/main.js"></script>
   
 </head>
@@ -120,7 +122,7 @@
     <div class="container">
         <div class="header">
             <div class="nav">
-                <img src="../static/images/logo_purple_trans.png" alt="" style="width: 70px; height:70px">
+                <img src="../static/images/Camplus-logo.png" alt="" style="width: 70px; height:70px">
                 <div class="search">
                     <!-- <input type="text" placeholder="Search..">
                     <button type="submit"><img src="search.png" alt=""></button> -->
@@ -276,8 +278,17 @@
     <script src="../static/js/script1.js"></script>
       
   {% else %}
-    <h1>Welcome Guest</h1>
-    <p class="log-in-out"><a href="/login">Login</a></p>
+  <div class="hero">
+    <div class="navbar">
+        <img src="../static/images/69c19d27d94446cea329a779140b5301-removebg-preview.png" class="logo">
+        <!-- <a href="#"><button class="button">Sign up</button></a> -->
+    </div>
+    <div class="content">
+        <small>Welcome To Your</small>
+        <h1> Own<br>New World</h1>
+        <a href="{{url_for('login')}}"><button>GET STARTED</button></a>
+    </div>
+</div> 
   {% endif %}
 </body>
 </html>

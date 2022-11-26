@@ -494,10 +494,11 @@ td {
     } */
 }
 
-@media screen and (max-width:536px) {
+@media screen and (max-width:680px) {
     .brand-name h1 {
         font-size: 16px;
     }
+    
     .container .content .cards {
         justify-content: center;
     }

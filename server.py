@@ -117,7 +117,7 @@ def callback():
     except:
         print('Could not add new record')
         
-    return redirect("/")
+    return redirect("/home")
 
 @app.route("/logout")
 def logout():
@@ -127,24 +127,28 @@ def logout():
         + "/v2/logout?"
         + urlencode(
             {
-                "returnTo": url_for("home", _external=True),
+                "returnTo": url_for("index", _external=True),
                 "client_id": env.get("AUTH0_CLIENT_ID"),
             },
             quote_via=quote_plus,
         )
     )
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route("/home", methods=['GET', 'POST'])
 def home():
     # temporary information
-    # if session:
-    #     #print(session.get('user')['userinfo']['name'])
-    #     t = user_balance.query.filter_by(user_name=session.get('user')['userinfo']['name']).first()
-    #     return render_template("home.html", session=session.get('user'), name=session.get('user')['userinfo']['name'],
-    #         e=session.get('user')['userinfo']['email'],
-    #         b=np.round(t.balance, 3), indent=4)
-    # else:
-    return render_template("home.html", session=session.get('user'), indent=4)
+    if session:
+        #print(session.get('user')['userinfo']['name'])
+        t = user_balance.query.filter_by(user_name=session.get('user')['userinfo']['name']).first()
+        return render_template("home.html", session=session.get('user'), name=session.get('user')['userinfo']['name'],
+            e=session.get('user')['userinfo']['email'],
+            b=np.round(t.balance, 3), indent=4)
+    else:
+        return render_template("home.html", session=session.get('user'), indent=4)
 
 # added new pages
 # to send payments
@@ -272,4 +276,4 @@ def errors():
     return render_template('error.html')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=env.get("PORT", 3000), debug=False)
+    app.run(host="0.0.0.0", port=env.get("PORT", 3000), debug=True)

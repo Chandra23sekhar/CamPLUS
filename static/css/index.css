@@ -4,8 +4,8 @@
     font-family: 'Noto Serif', serif;
 }
 
-.hero{
-    width: 100;
+body{
+    
     height: 100vh;
     background-image: url('../images/pexels-anni-roenkae-5853340.jpg');
     background-size: cover;

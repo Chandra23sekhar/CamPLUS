@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="profile.css">
+    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="../static/css/clubAdm.css">
-     <link rel="icon" href="../static/images/Camplus-logo.png">
+     <link rel="stylesheet" href="./sty.css">
     <title>Cam[PLUS] | Clubs</title>
 </head>
 
 <body>
-     
     <div class="sidebar">
         <div class="logo-details">
           <i class='bx bxl-c-plus-plus icon'></i>
@@ -113,10 +113,9 @@
                     <button type="submit"><img src="search.png" alt=""></button> -->
                 </div>
                 <div class="user">
-                    <img src="../static/images/Camplus-logo.png" alt="" style="height: 70px; width: 70px; position: absolute; left: 100px;">
                     <h1>Clubs</h1>
     
-                     <a href="{{url_for('createvent')}}" class="btn">Register events</a> 
+                     <a href="{{url_for('createvent')}}" class="btn">Create Event</a> 
                     <img src="../static/images/notifications.png" alt="">
                     <div class="img-case">
                         <img src="../static/images/user.png" alt="">
@@ -132,7 +131,11 @@
                         <h1>ieee.org</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../static/images/students.png" alt="">
+                      <lord-icon
+                      src="https://cdn.lordicon.com/nrtdaiif.json"
+                      trigger="hover"
+                      style="width:120px;height:120px">
+                  </lord-icon>
                     </div>
                 </div>
                 <div class="card">
@@ -141,7 +144,12 @@
                         <h3>Number of activities</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../static/images/teachers.png" alt="">
+                      <lord-icon
+                      src="https://cdn.lordicon.com/shiwicyv.json"
+                      trigger="morph"
+                      colors="primary:#4bb3fd,secondary:#ffc738,tertiary:#ebe6ef"
+                      style="width:120px;height:120px">
+                  </lord-icon>
                     </div>
                 </div>
                 <div class="card">
@@ -150,7 +158,12 @@
                         <h3>Club Points</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../static/images/schools.png" alt="">
+                      <lord-icon
+                      src="https://cdn.lordicon.com/pimvysaa.json"
+                      trigger="hover"
+                      colors="outline:#121331,primary:#b26836,secondary:#ffc738"
+                      style="width:120px;height:120px">
+                  </lord-icon>
                     </div>
                 </div>
                 <div class="card">
@@ -159,7 +172,12 @@
                         <h3>Current Club Value</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../static/images/income.png" alt="">
+                      <lord-icon
+    src="https://cdn.lordicon.com/oegrrprk.json"
+    trigger="hover"
+    colors="primary:#121331,secondary:#646e78,tertiary:#ffc738,quaternary:#4bb3fd"
+    style="width:120px;height:120px">
+</lord-icon>
                     </div>
                 </div>
             </div>
@@ -243,7 +261,6 @@
                             <td>John Steve Doe</td>
                             <td><img src="../static/images/info.png" alt=""></td>
                         </tr>
-
                     </table>
                 </div> -->
             </div>
