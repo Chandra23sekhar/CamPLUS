@@ -1,0 +1,165 @@
+:root{
+    --background-grey: #fff;
+    --paragraph-text: hsl(217, 12%, 63%);
+    --orange: hsl(25, 97%, 53%);
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+body{
+    background-color: #9F73AB;
+}
+
+.container-11{
+    width: 400px;
+    height: 350px;
+    background-color: #330033;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2em;
+    padding: 30px;
+    
+}
+
+@media (max-width: 870px){
+    .body{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container{
+        width: 350px;
+    }
+
+    #submit-btn{
+        bottom: 10px;
+    }
+}
+
+#star-icon{
+    width: 100%;
+    height: auto;
+}
+
+.circle-background{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--background-grey);
+    z-index: -10;
+    text-align: center;
+    
+}
+
+.circle-background>img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2em;
+    padding: 20px;
+}
+
+.title-11{
+    color: hsl(0, 0%, 100%);
+}
+
+.description-11{
+    color: var(--paragraph-text);
+    font-size: 1em;
+    max-width: 100%;
+}
+
+.select-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+    
+}
+
+.option{
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    font-weight: bold;
+    background-color: rebeccapurple;
+    border: none;
+    color: var(--background-grey);
+} 
+
+.option:hover{
+    background-color: hsl(25, 97%, 53%);
+    color: white;
+    transition: 0.1s;
+}
+
+.option:focus{
+    background-color: hsl(217, 12%, 63%);
+    color: white;
+}
+
+#submit-btn{
+    cursor: pointer;
+    position: absolute;
+    width: 85%;
+    height: 3em;
+    border-radius: 2em;
+    bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    outline: none;
+}
+
+#submit-btn:hover{
+    background-color: white;
+    color: var(--orange);
+}
+
+#card-2{
+    display: none;
+    text-align: center;
+}
+
+#final-result-box{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    height: 1.8em;
+    line-height: 1.8em;
+    width: 60%;
+    border-radius: 0.8em;
+    color: var(--orange);
+    background-color: var(--background-grey);
+}
+
+#tnq{
+    margin-top: 30px;
+}
+
+@media (max-width: 870px){
+    .body{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container{
+        width: 350px;
+    }
+
+    #submit-btn{
+        bottom: 10px;
+    }
+}

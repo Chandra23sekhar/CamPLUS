@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 98%;
+    width: 99%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/home-background.jpg');
+}
+
+.log-in-out{
+    width: 100px;
+    height: 40px;
+    border-radius: 0.5em;
+    background-color: white;
+    text-align: center;
+    line-height: 40px;
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../static/css/feedback.css">
+    <link rel="icon" href="./images/favicon-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cam[PLUS] | Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        final_val = 0;
+
+
+        /* Get the value of the clicked button. */
+        function getValue_one(){
+            var clicked_btn = document.getElementById('one');
+            final_val = parseInt(clicked_btn.textContent);
+        }
+
+        function getValue_two(){
+            var clicked_btn = document.getElementById('two');
+            final_val = parseInt(clicked_btn.textContent);
+        }
+
+        function getValue_three(){
+            var clicked_btn = document.getElementById('three');
+            final_val = parseInt(clicked_btn.textContent);
+        }
+
+        function getValue_four(){
+            var clicked_btn = document.getElementById('four');
+            final_val = parseInt(clicked_btn.textContent);
+        }
+
+        function getValue_five(){
+            var clicked_btn = document.getElementById('five');
+            final_val = parseInt(clicked_btn.textContent);
+        }
+
+        function show(){
+            document.getElementById('card-1').style.display = 'none';
+            document.getElementById('card-2').style.display = 'block';
+            document.getElementById('final-value').innerHTML = final_val;
+            document.getElementById('userRating').value = final_val.toString();
+            console.log(final_val);
+            console.log(document.getElementById('usrRating').value);
+        }
+
+    </script>
+</head>
+<body>
+    <main>
+        <!--Main card-->
+        <div class="sidebar">
+            <div class="logo-details">
+              <i class='bx bxl-c-plus-plus icon'></i>
+                <div class="logo_name">Cam+</div>
+                <i class='bx bx-menu' id="btn" ></i>
+            </div>
+            <ul class="nav-list">
+              <li>
+                  <!-- <i class='bx bx-search' ></i> -->
+                 <!-- <input type="text" placeholder="Search...">
+                 <span class="tooltip">Search</span> -->
+              </li>
+              <li>
+                <a href="{{url_for('createvent')}}">
+                  <i class='bx bx-grid-alt'></i>
+                  <span class="links_name">Create Event</span>
+                </a>
+                 <span class="tooltip">Create Event</span>
+              </li>
+              <li>
+               <a href="{{url_for('home')}}">
+                 <i class='bx bx-user' ></i>
+                 <span class="links_name">Home</span>
+               </a>
+               <span class="tooltip">Home</span>
+             </li>
+             <li>
+              <a href="{{url_for('clubadmin')}}">
+                <i class='bx bx-grid-alt'></i>
+                <span class="links_name">Club Admin</span>
+              </a>
+               <span class="tooltip">Club Admin</span>
+            </li>
+             <li>
+               <a href="{{url_for('viewevent')}}">
+                 <i class='bx bx-chat' ></i>
+                 <span class="links_name">View Events</span>
+               </a>
+               <span class="tooltip">View Events</span>
+             </li>
+             <li>
+               <a href="{{url_for('payments')}}">
+                 <i class='bx bx-pie-chart-alt-2' ></i>
+                 <span class="links_name">Payments</span>
+               </a>
+               <span class="tooltip">Payments</span>
+             </li>
+             <li>
+               <a href="{{url_for('feedback')}}">
+                 <i class='bx bx-folder' ></i>
+                 <span class="links_name">Feedback</span>
+               </a>
+               <span class="tooltip">Feedback</span>
+             </li>
+             <!-- <li>
+               <a href="#">
+                 <i class='bx bx-cart-alt' ></i>
+                 <span class="links_name">Order</span>
+               </a>
+               <span class="tooltip">Order</span>
+             </li>
+             <li>
+               <a href="#">
+                 <i class='bx bx-heart' ></i>
+                 <span class="links_name">Saved</span>
+               </a>
+               <span class="tooltip">Saved</span>
+             </li>
+             <li>
+               <a href="#">
+                 <i class='bx bx-cog' ></i>
+                 <span class="links_name">Setting</span>
+               </a>
+               <span class="tooltip">Setting</span>
+             </li>
+             <li class="profile">
+                 
+                 <i class='bx bx-log-out' id="log_out" ></i>
+             </li> -->
+             <li>
+              <a href="{{url_for('rewards')}}">
+                <i class='bx bx-cart-alt' ></i>
+                <span class="links_name">Rewards</span>
+              </a>
+              <span class="tooltip">Rewards</span>
+            </li>
+            <li>
+              <a href="{{url_for('logout')}}">
+                <i class='bx bx-log-out' id='log_out'></i>
+                <span class="links_name">Log Out</span>
+              </a>
+              <span class="tooltip">Log Out</span>
+            </li>
+            </ul>
+          </div>
+
+
+        <div class="container-11" id="card-1">
+            <!-- <div id="star-icon">
+               <div class="circle-background"><img src="../static/images/icon-star.svg" alt="icon-star"></div> 
+            </div> -->
+            <h1 class="title-11">How did we do?</h1>
+            <p class="description-11">
+                Please let us know how we did with your support request. All feedback is appreciated 
+                to help us improve our offering!
+            </p>
+            <div class="select-options">
+                <button class="option" type="button" id="one" onclick="getValue_one()">1</button>
+                <button class="option" type="button" id="two" onclick="getValue_two()">2</button>
+                <button class="option" type="button" id="three" onclick="getValue_three()">3</button>
+                <button class="option" type="button" id="four" onclick="getValue_four()">4</button>
+                <button class="option" type="button" id="five" onclick="getValue_five()">5</button>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+              <input type="number" name="userRating" id="userRating" style="display: none;">
+              <input type="submit" id="submit-btn" onclick="show()">
+            </form>
+            
+        </div>
+        
+        <!--Hidden card to display final result.-->
+
+        <div class="container-11" id="card-2">
+            <img src="../static/images/illustration-thank-you.svg" alt="thank-you">
+            <p id="final-result-box">You selected <span id="final-value"></span> out of 5</p>
+            <h1 class="title-11" id="tnq">Thank you!</h1>
+            <p class="description-11">
+                We appreciate you taking the time to give a rating. If you ever need more support, 
+                don’t hesitate to get in touch!
+            </p>
+        </div>
+
+    </main>
+    <script src="../static/js/script1.js"></script>
+</body>
+</html>

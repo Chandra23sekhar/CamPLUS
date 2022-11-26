@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/viewevent.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <title>Events Card</title>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">Cam+</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <!-- <i class='bx bx-search' ></i> -->
+             <!-- <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span> -->
+          </li>
+          <li>
+            <a href="{{url_for('createvent')}}">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Create Event</span>
+            </a>
+             <span class="tooltip">Create Event</span>
+          </li>
+          <li>
+           <a href="{{url_for('home')}}">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Home</span>
+           </a>
+           <span class="tooltip">Home</span>
+         </li>
+         <li>
+          <a href="{{url_for('clubadmin')}}">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Club Admin</span>
+          </a>
+           <span class="tooltip">Club Admin</span>
+        </li>
+         <li>
+           <a href="{{url_for('viewevent')}}">
+             <i class='bx bx-chat' ></i>
+             <span class="links_name">View Events</span>
+           </a>
+           <span class="tooltip">View Events</span>
+         </li>
+         <li>
+            <a href="{{url_for('rewards')}}">
+              <i class='bx bx-cart-alt' ></i>
+              <span class="links_name">Rewards</span>
+            </a>
+            <span class="tooltip">Rewards</span>
+          </li>
+         <li>
+           <a href="{{url_for('payments')}}">
+             <i class='bx bx-pie-chart-alt-2' ></i>
+             <span class="links_name">Payments</span>
+           </a>
+           <span class="tooltip">Payments</span>
+         </li>
+         <li>
+           <a href="{{url_for('feedback')}}">
+             <i class='bx bx-folder' ></i>
+             <span class="links_name">Feedback</span>
+           </a>
+           <span class="tooltip">Feedback</span>
+         </li>
+         <!-- <li>
+           <a href="#">
+             <i class='bx bx-cart-alt' ></i>
+             <span class="links_name">Order</span>
+           </a>
+           <span class="tooltip">Order</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-heart' ></i>
+             <span class="links_name">Saved</span>
+           </a>
+           <span class="tooltip">Saved</span>
+         </li>-->
+         <li>
+           <a href="{{url_for('logout')}}">
+             <i class='bx bx-log-out' id='log_out'></i>
+             <span class="links_name">Log Out</span>
+           </a>
+           <span class="tooltip">Log Out</span>
+         </li>
+         <!-- <li class="profile">
+             
+             <i class='bx bx-log-out' id="log_out" ></i>
+         </li> -->
+        </ul>
+      </div>
+
+
+
+    <div class="container-11">
+        <div class="item-container">
+            <div class="img-container">
+                <img src="../static/images/img 2.png" alt="Event image">
+            </div>
+
+            <div class="body-container">
+                <div class="overlay"></div>
+
+                <div class="event-info">
+                    <p class="title">CentuRiton</p>
+                    <div class="separator"></div>
+                    <p class="info">Karnataka, Bangalore</p>
+                    <p class="price">Free</p>
+
+                    <div class="additional-info">
+                        <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Ramaiah Institute Of Technology
+                        </p>
+                        <p class="info">
+                            <i class="far fa-calendar-alt"></i>
+                            Fri, Nov 25, 10:00 AM EDT
+                        </p>
+
+                        <p class="info description">
+                            Welcome! Everyone has a unique way of showcasing their coding talent.So here is the chance.DO REGISTER!!!<span>more...</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="action">Register</button>
+            </div>
+        </div>
+
+        <div class="item-container">
+            <div class="img-container">
+                <img src="../static/images/img 3.png" alt="Event image">
+            </div>
+
+            <div class="body-container">
+                <div class="overlay"></div>
+
+                <div class="event-info">
+                    <p class="title">METABUILD </p>
+                    <div class="separator"></div>
+                    <p class="info">Karnataka, Bangalore</p>
+                    <p class="price">Free</p>
+
+                    <div class="additional-info">
+                        <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Online Event
+                        </p>
+                        <p class="info">
+                            <i class="far fa-calendar-alt"></i>
+                            Mon, Nov 21, 05:00 PM EDT
+                        </p>
+
+                        <p class="info description">
+                            Welcome! Everyone has a unique way of showcasing their coding talent.So here is the chance.DO REGISTER!!! <span>more...</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="action">Register</button>
+            </div>
+        </div>
+
+        <div class="item-container">
+            <div class="img-container">
+                <img src="../static/images/img 6.jpg.crdownload" alt="Event image">
+            </div>
+
+            <div class="body-container">
+                <div class="overlay"></div>
+
+                <div class="event-info">
+                    <p class="title">BLOCKCHAIN</p>
+                    <div class="separator"></div>
+                    <p class="info">Karnataka, Bangalore</p>
+                    <p class="price">Free</p>
+
+                    <div class="additional-info">
+                        <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Online Event
+                        </p>
+                        <p class="info">
+                            <i class="far fa-calendar-alt"></i>
+                            Tue, Nov 15, 01:00 PM EDT
+                        </p>
+
+                        <p class="info description">
+                            Welcome! Everyone has a unique way of showcasing their coding talent.So here is the chance.DO REGISTER!!!<span>more...</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="action">Register</button>
+            </div>
+        </div>
+
+        <div class="item-container">
+            <div class="img-container">
+                <img src="../static/images/img 5.jpg" alt="Event image">
+            </div>
+
+            <div class="body-container">
+                <div class="overlay"></div>
+
+                <div class="event-info">
+                    <p class="title">Google Maps Platform</p>
+                    <div class="separator"></div>
+                    <p class="info">Karnataka, Bangalore</p>
+                    <p class="price">Free</p>
+
+                    <div class="additional-info">
+                        <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Online Event
+                        </p>
+                        <p class="info">
+                            <i class="far fa-calendar-alt"></i>
+                            Mon, Nov 14, 05:00 PM EST
+                        </p>
+
+                        <p class="info description">
+                            Welcome! Everyone has a unique way of showcasing their coding talent.So here is the chance.DO REGISTER!!!<span>more...</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="action">Register</button>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/script1.js"></script>
+</body>
+</html>

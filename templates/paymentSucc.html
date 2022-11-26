@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you</title>
+    <link rel="stylesheet" href="../static/css/paymentSucc.css">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+    </svg>
+    <script src="https://kit.fontawesome.com/16e4e7adbf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="center">
+        <button id="open-popup">Submit</button>
+      </div>
+      <div class="popup">
+        <div class="head">
+          <div class="icon">
+            <div class="box">
+              <i class="bi bi-check-lg"></i>j
+                <!-- <i class="fa-solid fa-check"></i> -->
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <h1>THANK YOU!!</h1>
+          <p>Your details has been succesfully submitted.Thanks!</p>
+          <button class="close-btn">&times; OK</button>
+        </div>
+      </div>
+      <script>
+        document.querySelector("#open-popup").addEventListener("click",function(){
+    document.querySelector(".popup").classList.add("active");
+  });
+  document.querySelector(".popup .close-btn").addEventListener("click",function(){
+    document.querySelector(".popup").classList.remove("active");
+  });
+      </script>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

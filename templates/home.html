@@ -1,0 +1,283 @@
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cam[PLUS] | Home</title>
+  <link rel="icon" href="../static/images/Cam[PLUS].png">
+  <!-- <link rel="stylesheet" href="../static/css/profile.css"> -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <!-- <title>Auth0 Example</title> -->
+  <!-- <link rel="stylesheet" href="../static/css/login.css"> -->
+  <link rel="stylesheet" href="../static/css/profile.css">
+  <script src="../static/js/main.js"></script>
+  
+</head>
+<body>
+  {% if session %}
+      <h1>Welcome {{session.userinfo.name}}!</h1>
+      
+      <!-- <div><pre>{{pretty}}</pre></div> -->
+
+      <!--Changed-->
+      <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">Cam+</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <!-- <i class='bx bx-search' ></i> -->
+             <!-- <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span> -->
+          </li>
+          <li>
+            <a href="{{url_for('clubadmin')}}">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Club Admin</span>
+            </a>
+             <span class="tooltip">Club Admin</span>
+          </li>
+          <li>
+            <a href="{{url_for('createvent')}}">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Create Event</span>
+            </a>
+             <span class="tooltip">Create Event</span>
+          </li>
+          <li>
+           <a href="{{url_for('home')}}">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Home</span>
+           </a>
+           <span class="tooltip">Home</span>
+         </li>
+         <li>
+            <a href="{{url_for('rewards')}}">
+              <i class='bx bx-cart-alt' ></i>
+              <span class="links_name">Rewards</span>
+            </a>
+            <span class="tooltip">Rewards</span>
+          </li>
+         <li>
+           <a href="viewevent">
+             <i class='bx bx-chat'></i>
+             <span class="links_name">View Events</span>
+           </a>
+           <span class="tooltip">Veiw Events</span>
+         </li>
+         <li>
+           <a href="payments">
+             <i class='bx bx-pie-chart-alt-2' ></i>
+             <span class="links_name">Payment</span>
+           </a>
+           <span class="tooltip">Payment</span>
+         </li>
+         <li>
+           <a href="feedback">
+             <i class='bx bx-folder'></i>
+             <span class="links_name">Feedback</span>
+           </a>
+           <span class="tooltip">Feedback</span>
+         </li>
+         <!-- <li>
+           <a href="#">
+             <i class='bx bx-cart-alt' ></i>
+             <span class="links_name">Order</span>
+           </a>
+           <span class="tooltip">Order</span>
+         </li> -->
+         <!-- <li>
+           <a href="#">
+             <i class='bx bx-heart' ></i>
+             <span class="links_name">Saved</span>
+           </a>
+           <span class="tooltip">Saved</span>
+         </li> -->
+         <!-- <li>
+           <a href="#">
+             <i class='bx bx-cog' ></i>
+             <span class="links_name">Setting</span>
+           </a>
+           <span class="tooltip">Setting</span>
+         </li>
+         <li class="profile">
+             
+             <i class='bx bx-log-out' id="log_out" ></i>
+         </li> -->
+         <li>
+          <a href="{{url_for('logout')}}">
+            <i class='bx bx-log-out' id='log_out'></i>
+            <span class="links_name">Log Out</span>
+          </a>
+          <span class="tooltip">Log Out</span>
+        </li>
+        </ul>
+      </div>
+  
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <img src="../static/images/logo_purple_trans.png" alt="" style="width: 70px; height:70px">
+                <div class="search">
+                    <!-- <input type="text" placeholder="Search..">
+                    <button type="submit"><img src="search.png" alt=""></button> -->
+                </div>
+                <div class="user">
+                    
+                     <a href="{{url_for('payments')}}" class="btn">Send</a> 
+                     <a href="{{url_for('receive')}}" class="btn">Receive</a> 
+                    <!-- <img src="../static/images/notifications.png" alt=""> -->
+                    <div class="img-case">
+                        <img src="../static/images/user.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cards">
+                <div class="card">
+                    <div class="box">
+                        <h3 style="color: white;">{{name}}</h3>
+                        <h5 style="color: white;">{{e}}</h5>
+                    </div>
+                    <div class="icon-case">
+                        <img src="../static/images/students.png" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>{{b}}</h1>
+                        <h3>Balance</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="../static/images/teachers.png" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>34</h1>
+                        <h3>Received</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="../static/images/schools.png" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>12.5</h1>
+                        <h3>Total Points Used</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="../static/images/income.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h>Recent Payments</h>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Institute</th>
+                            <th>Amount</th>
+                            <th>Option</th>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Nmit</td>
+                            <td>$2</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Nmit</td>
+                            <td>$1</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Reva</td>
+                            <td>$3</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Nmit</td>
+                            <td>$6</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>St. James College</td>
+                            <td>$20</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Reva</td>
+                            <td>$2</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p><a href="/logout">Logout</a></p>
+
+                <div class="new-students">
+                    <div class="title">
+                        <h>Clubs</h>
+                        <!-- <a href="#" class="btn">View All</a> -->
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Club Points Activity</th>
+                            
+                        </tr>
+                        <tr>
+                            <td><img src="../static/images/newplot1.png" alt="" class="plots"></td>
+                            <td><p>IEEE</p></td>
+                            
+                            <!-- <td><img src="../static/images/user.png" alt=""></td>
+                            <td>John Steve Doe</td>
+                            <td><img src="../static/images/info.png" alt=""></td> -->
+                        </tr>
+                        
+                        <tr>
+                            <td><img src="../static/images/newplot1.png" alt="" class="plots"></td>
+                            <td><p>HACK CLUB</p></td>
+                            <!-- <td><img src="../static/images/user.png" alt=""></td>
+                            <td>John Steve Doe</td>
+                            <td><img src="../static/images/info.png" alt=""></td> -->
+                        </tr>
+                        <tr>
+                            <td><img src="../static/images/bar.png" alt="" class="plots"></td>
+                            <td><p>ASTERIA CLUB</p></td>
+                            <!-- <td><img src="../static/images/user.png" alt=""></td>
+                            <td>John Steve Doe</td>
+                            <td><img src="../static/images/info.png" alt=""></td> -->
+                        </tr>
+                        <!-- <tr>
+                            <td><img src="../static/images/user.png" alt=""></td>
+                            <td>John Steve Doe</td>
+                            <td><img src="../static/images/info.png" alt=""></td>
+                        </tr> -->
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/script1.js"></script>
+      
+  {% else %}
+    <h1>Welcome Guest</h1>
+    <p class="log-in-out"><a href="/login">Login</a></p>
+  {% endif %}
+</body>
+</html>

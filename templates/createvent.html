@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cam[PLUS] | Create Event</title>
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/createvent.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">Cam+</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <!-- <i class='bx bx-search' ></i> -->
+             <!-- <input type="text" placeholder="Search...">
+             <span class="tooltip">Search</span> -->
+          </li>
+          <li>
+            <a href="{{url_for('createvent')}}">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Create Events</span>
+            </a>
+             <span class="tooltip">Create Events</span>
+          </li>
+          <li>
+           <a href="{{url_for('home')}}">
+             <i class='bx bx-user' ></i>
+             <span class="links_name">Home</span>
+           </a>
+           <span class="tooltip">Home</span>
+         </li>
+         <li>
+           <a href="{{url_for('viewevent')}}">
+             <i class='bx bx-chat'></i>
+             <span class="links_name">View Events</span>
+           </a>
+           <span class="tooltip">View Events</span>
+         </li>
+         <li>
+          <a href="{{url_for('clubadmin')}}">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Club Admin</span>
+          </a>
+           <span class="tooltip">Club Admin</span>
+        </li>
+         <li>
+           <a href="{{url_for('payments')}}">
+             <i class='bx bx-pie-chart-alt-2' ></i>
+             <span class="links_name">Payements</span>
+           </a>
+           <span class="tooltip">Payments</span>
+         </li>
+         <li>
+           <a href="{{url_for('feedback')}}">
+             <i class='bx bx-folder' ></i>
+             <span class="links_name">Feedback</span>
+           </a>
+           <span class="tooltip">Feedback</span>
+         </li>
+         <li>
+           <a href="{{url_for('rewards')}}">
+             <i class='bx bx-cart-alt' ></i>
+             <span class="links_name">Rewards</span>
+           </a>
+           <span class="tooltip">Rewards</span>
+         </li>
+         <!-- <li>
+           <a href="#">
+             <i class='bx bx-heart' ></i>
+             <span class="links_name">Saved</span>
+           </a>
+           <span class="tooltip">Saved</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-cog' ></i>
+             <span class="links_name">Setting</span>
+           </a>
+           <span class="tooltip">Setting</span>
+         </li>
+         <li class="profile">
+             
+             <i class='bx bx-log-out' id="log_out" ></i>
+         </li> -->
+         <li>
+          <a href="{{url_for('logout')}}">
+            <i class='bx bx-log-out' id='log_out'></i>
+            <span class="links_name">Log Out</span>
+          </a>
+          <span class="tooltip">Log Out</span>
+        </li>
+        </ul>
+      </div>
+
+
+
+      <div class="container-112">
+        <div class="title">Event Registration</div>
+        <div class="content">
+          <form method="post" enctype="multipart/form-data">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Full Name</span>
+                <input type="text" placeholder="Enter your name" required name="full-name">
+              </div>
+              <div class="input-box">
+                <span class="details">Description</span>
+                <input type="text" placeholder="Enter the Event or Hackathon" required name="description">
+              </div>
+              <div class="input-box">
+                <span class="details">Venue</span>
+                <input type="text" placeholder="Enter the Venue" required name="venue">
+              </div>
+              <div class="input-box">
+                <span class="details">Start date</span>
+                <input type="date" placeholder="Enter the start date" required name="Start_d">
+              </div>
+              <div class="input-box">
+                <span class="details">End date</span>
+                <input type="date" placeholder="Enter the end date" required name="End_d">
+              </div>
+              <div class="input-box">
+                <span class="details">Participants</span>
+                <input type="text" placeholder="Enter the no. of Participants" required name="no_p">
+              </div>
+              <div class="input-box">
+                <span class="details">Start Time</span>
+                <input type="Time" placeholder="Enter the Time" required>
+              </div>
+              <div class="input-box">
+                <span class="details">End Time</span>
+                <input type="time" placeholder="Enter the Time" required>
+              </div>
+            </div>
+            <div class="gender-details">
+              <input type="radio" name="gender" id="dot-1">
+              <input type="radio" name="gender" id="dot-2">
+              <input type="radio" name="gender" id="dot-3">
+              <span class="gender-title">Mode</span>
+              <div class="category">
+                <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Offline</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Online</span>
+              </label>
+              <!--<label for="dot-3">
+                <span class="dot three"></span>
+                <span class="gender">Prefer not to say</span>
+                </label>--->
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="Register">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <script src="../static/js/script1.js"></script>
+</body>
+</html>

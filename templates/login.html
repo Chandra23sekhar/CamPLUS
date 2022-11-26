@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cam[PLUS] Login</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/images/Cam[PLUS].png">
+</head>
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form method="post" enctype="multipart/form-data">
+                <input type="hidden" id="formId" name="formId" value="0">
+                <label for="chk" aria-hidden="true" style="border: 2px solid white; border-radius: 0.5em; background-color:blueviolet;">Login</label>
+                <h3 style="position: relative; margin: 0px 60px 0px 60px; color:aliceblue">Sign Up</h3>
+                <input type="text" name="userName" placeholder="User name" required="">
+                <input type="email" name="userEmail" placeholder="Email" required="">
+                <input type="text" name="userPhno" placeholder="Phone number" required="">
+                <input type="password" name="userPass" placeholder="Password" required="">
+                <input type="text" name="userUSN" placeholder="USN" required="">
+                <input type="text" name="userClg" placeholder="Name of College" required="">
+                <input type="number" name="userAge" placeholder="Age" required="">
+                <button>Sign up</button>
+            </form>
+        </div>
+
+        <div class="Login">
+            <form method="post" enctype="multipart/form-data">
+                <input type="hidden" id="formId" name="formId" value="1">
+                <label for="chk" aria-hidden="false">Login</label>
+                <input type="email" name="userEmail" placeholder="Email" required="">
+                <input type="password" name="userPass" placeholder="Password" required="">
+                
+                <button>Login</button>
+                <!-- <input type="submit"> -->
+            </form>
+            {% for m in get_flashed_messages() %}
+                    <p>{{m}}</p>
+            {% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>

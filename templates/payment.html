@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cam[PLUS] | Payment</title>
+    <link rel="icon" href="../static/images/Cam[PLUS].png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/payment.css">
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <script src="../static/js/script1.js"></script>
+    <link rel="stylesheet" href="../static/css/paymentSucc.css">
+    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+    <script src="https://kit.fontawesome.com/16e4e7adbf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">Cam+</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <!-- <i class='bx bx-search' ></i> -->
+         <!-- <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span> -->
+      </li>
+      <li>
+        <a href="{{url_for('clubadmin')}}">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Club Admin</span>
+        </a>
+         <span class="tooltip">Club Admin</span>
+      </li>
+      <li>
+        <a href="{{url_for('createvent')}}">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Create Event</span>
+        </a>
+         <span class="tooltip">Create Event</span>
+      </li>
+      <li>
+       <a href="{{url_for('home')}}">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Home</span>
+       </a>
+       <span class="tooltip">Home</span>
+     </li>
+     <li>
+      <a href="{{url_for('rewards')}}">
+        <i class='bx bx-cart-alt' ></i>
+        <span class="links_name">Rewards</span>
+      </a>
+      <span class="tooltip">Rewards</span>
+    </li>
+     <li>
+      
+       <a href="{{url_for('viewevent')}}">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">View Events</span>
+       </a>
+       <span class="tooltip">View Events</span>
+     </li>
+     <li>
+       <a href="{{url_for('payments')}}">
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Payments</span>
+       </a>
+       <span class="tooltip">Payments</span>
+     </li>
+     <li>
+       <a href="{{url_for('feedback')}}">
+         <i class='bx bx-folder' ></i>
+         <span class="links_name">Feedback</span>
+       </a>
+       <span class="tooltip">Feedback</span>
+     </li>
+     <!-- <li>
+       <a href="#">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Order</span>
+       </a>
+       <span class="tooltip">Order</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Saved</span>
+       </a>
+       <span class="tooltip">Saved</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li> -->
+     <li>
+      <a href="{{url_for('logout')}}">
+        <i class='bx bx-log-out' id='log_out'></i>
+        <span class="links_name">Log Out</span>
+      </a>
+      <span class="tooltip">Log Out</span>
+    </li>
+    </ul>
+  </div>
+
+  <img src="../static/images/PngItem_5108509.png" alt="" id="coin-img">
+    <div class="container-11">
+        <h3>Payment Details</h3>
+        <form method="post" enctype="multipart/form-data">
+            <label for="senderName">Sender:
+                <p id="sname">{{senderName}}</p>
+            </label>
+            <label for="receiverName">Receiver:
+                <input type="text" name="receiverName" required="">
+            </label>
+            <label for="amount">Amount ($coin):
+                <input type="text" name="amount" required="">
+            </label>
+      <button id="open-popup">Submit</button>
+        </form>
+    </div>
+
+    
+    <!-- <div class="center">
+      <button id="open-popup">Submit</button>
+    </div> -->
+    <div class="popup">
+      <div class="head">
+        <div class="icon">
+          <div class="box">
+              <i class="fa-solid fa-check"></i>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <h1>Payment succesful!</h1>
+        <p>Payment was completed successfully.</p>
+        <button class="close-btn">Close</button>
+      </div>
+    </div>
+    <script>
+      document.querySelector("#open-popup").addEventListener("click",function(){
+  document.querySelector(".popup").classList.add("active");
+  window.location.reload();
+});
+document.querySelector(".popup .close-btn").addEventListener("click",function(){
+  document.querySelector(".popup").classList.remove("active");
+  location.reload();
+});
+    </script>
+
+
+    <!-- <img src="../static/images/qr.jpeg" alt="qrCode"> -->
+    <script src="../static/js/script1.js"></script>
+</body>
+</html>
