@@ -7,15 +7,15 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    min-height: 100vh;
+    /* min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: #330033;
+    justify-content: center; */
+    background: #fff;
 }
 .container{
     position: relative;
-    max-width: 900px;
+    /* max-width: 900px; */
     width: 100%;
     border-radius: 6px;
     padding: 30px;
@@ -37,7 +37,7 @@ body{
     height: 3px;
     width: 27px;
     border-radius: 8px;
-    background-color: #330033;
+    background-color: #fff;
 }
 .container form{
     position: relative;
@@ -54,7 +54,7 @@ body{
 .container form .form.second{
     opacity: 0;
     pointer-events: none;
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
 }
 form.secActive .form.second{
     opacity: 1;
@@ -64,7 +64,7 @@ form.secActive .form.second{
 form.secActive .form.first{
     opacity: 0;
     pointer-events: none;
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
 }
 .container form .title{
     display: block;
