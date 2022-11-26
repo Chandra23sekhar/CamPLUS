@@ -4,7 +4,11 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
-}
+
+  .sidebar>ul>li>img{
+    width: 30px;
+    height: 30px;
+  }
 
 body {
     min-height: 100vh;
