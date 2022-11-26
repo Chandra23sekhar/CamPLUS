@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cam[Plus] | No Organiztion</title>
+    <style>
+        .container{
+            height: 400px;
+            width: 400px;
+            border-radius: 0.5em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid black;
+            background-image: url('../static/images/job183-bee-22a.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            text-align: center;
+        }
+        .line-1{
+            position: absolute;
+            bottom: 50px;
+            font-size: medium;
+            color: black;
+            font-weight: bold;
+            margin: 30px;
+        }
+        .line-2{
+            position: absolute;
+            bottom: 30px;
+            font-size: medium;
+            color: black;
+            font-weight: bold;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="line-1">Looks like either you or your organiztion are not registered with us yet!</p><br>
+        <p class="line-2">Click here to return to <a href="{{url_for('login')}}">login</a> page.</p>
+    </div>
+</body>
+</html>

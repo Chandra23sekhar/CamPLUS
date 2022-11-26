@@ -4,7 +4,7 @@ from urllib.parse import quote_plus, urlencode
 from flask_sqlalchemy import SQLAlchemy
 from authlib.integrations.flask_client import OAuth
 from dotenv import find_dotenv, load_dotenv
-from flask import Flask, redirect, render_template, session, url_for, request
+from flask import Flask, redirect, render_template, session, url_for, request, flash
 from datetime import datetime
 
 import numpy as np
@@ -12,6 +12,7 @@ from getData import *
 from encryptPass import *
 from createClub import *
 
+# get .env file
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -75,7 +76,7 @@ class new_event(db.Model):
 
 db.create_all()
 
-
+# Initialize oauth application
 oauth = OAuth(app)
 
 oauth.register(
@@ -101,8 +102,13 @@ def login():
 # redirect to this page after successful authentication.
 @app.route("/callback", methods=["GET", "POST"])
 def callback():
-    token = oauth.auth0.authorize_access_token()
-    session["user"] = token
+    try:
+        token = oauth.auth0.authorize_access_token()
+        session["user"] = token
+    except:
+       # print('User doesnt belong to this organiztion')
+        flash('User doesnt belong to the organization')
+        return redirect('/errors')
     try:
         print('Trying to add new record')
         new_rec = user_balance(user_name=session.get('user')['userinfo']['name'], balance=10.0)
@@ -131,13 +137,14 @@ def logout():
 @app.route("/", methods=['GET', 'POST'])
 def home():
     # temporary information
-    if session:
-        t = user_balance.query.filter_by(user_name=session.get('user')['userinfo']['name']).first()
-        return render_template("home.html", session=session.get('user'), name=session.get('user')['userinfo']['name'],
-            e=session.get('user')['userinfo']['email'],
-            b=np.round(t.balance, 3), indent=4)
-    else:
-        return render_template("home.html", session=session.get('user'), indent=4)
+    # if session:
+    #     #print(session.get('user')['userinfo']['name'])
+    #     t = user_balance.query.filter_by(user_name=session.get('user')['userinfo']['name']).first()
+    #     return render_template("home.html", session=session.get('user'), name=session.get('user')['userinfo']['name'],
+    #         e=session.get('user')['userinfo']['email'],
+    #         b=np.round(t.balance, 3), indent=4)
+    # else:
+    return render_template("home.html", session=session.get('user'), indent=4)
 
 # added new pages
 # to send payments
@@ -260,7 +267,9 @@ def feedback():
 def rewards():
     return render_template('rewards.html')
 
-
+@app.route('/errors')
+def errors():
+    return render_template('error.html')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=env.get("PORT", 3000), debug=True)
+    app.run(host="0.0.0.0", port=env.get("PORT", 3000), debug=False)
