@@ -287,5 +287,10 @@ def rewards():
 def errors():
     return render_template('error.html')
 
+
+@app.route('/createClub')
+def createClub():
+    return render_template('createClub.html')
+
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=False, host='0.0.0.0')
